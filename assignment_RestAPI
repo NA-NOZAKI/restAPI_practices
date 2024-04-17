@@ -1,0 +1,16 @@
+・課題: ToDo リストの REST API の作成
+
+・要件:
+　　Spring BootとGradleを使用して、ToDo リストのための REST API を作成します。
+　　ToDo リストの各アイテムは、タイトル、説明、期限日、完了フラグなどの基本的な情報を持ちます。
+　　RESTfulなエンドポイントを設計し、CRUD操作（Create、Read、Update、Delete）をサポートします。
+　　データは一時的にメモリ内に保存されるだけで十分です（データベースは必要ありません）。
+・エンドポイントの例:
+　　GET /todos: すべての ToDo アイテムのリストを取得します。
+　　POST /todos: 新しい ToDo アイテムを作成します。
+　　GET /todos/{id}: 指定された ID の ToDo アイテムを取得します。
+　　PUT /todos/{id}: 指定された ID の ToDo アイテムを更新します。
+　　DELETE /todos/{id}: 指定された ID の ToDo アイテムを削除します。
+・ヒント:
+　　Spring Bootの@RestControllerと@RequestMappingアノテーションを使ってエンドポイントを定義します。
+　　メモリ内にデータを保持するために、リストやマップを使用できます。

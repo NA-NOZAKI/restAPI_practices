@@ -1,7 +1,6 @@
 package com.assignment;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 public class ToDoList {
@@ -10,7 +9,7 @@ public class ToDoList {
 	private String note;
 	private Date deadLine;
 	private Boolean completionFlag;
-	private static Map<String, List<ToDoList>> todoLists;
+	private static Map<String, ToDoList> todoLists;
 
 	public ToDoList(String title, String note, Date date, Boolean flag) {
 		this.title = title;
@@ -51,11 +50,11 @@ public class ToDoList {
 		this.completionFlag = completionFlag;
 	}
 
-	public static Map<String, List<ToDoList>> getMapLts() {
+	public static Map<String, ToDoList> getMapLts() {
 		return todoLists;
 	}
 
-	public void setMapLts(Map<String, List<ToDoList>> todoLists) {
+	public void setMapLts(Map<String, ToDoList> todoLists) {
 		ToDoList.todoLists = todoLists;
 	}
 }

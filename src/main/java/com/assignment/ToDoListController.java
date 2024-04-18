@@ -25,7 +25,7 @@ public class ToDoListController {
 		// List のサイズから Id を set する
 		ToDoList todoLs = new ToDoList(title, note, date, flag);
 		// ToDo アイテムをリストに追加する
-		if (ToDoListService.addItem(todoLs)) {
+		if (ToDoListService.addItem(title,todoLs)) {
 			return " Successfully CreateItem!! ";
 		} else {
 			return "!! Create Failure !!";
@@ -34,8 +34,8 @@ public class ToDoListController {
 
 	// 指定された ID の ToDo アイテムを取得する
 	@GetMapping("/GetKey=")
-	public List<ToDoList> getToDoLs(String title) {
-		List<ToDoList> todols = ToDoListService.getList(title);
+	public ToDoList getToDoLs(String title) {
+		ToDoList todols = ToDoListService.getList(title);
 		return todols;
 	}
 
@@ -43,7 +43,7 @@ public class ToDoListController {
 	@PutMapping("/UpdateKey=")
 	public String updateItem(String title, String note, Date date, Boolean flag) {
 		ToDoList todoLs = new ToDoList(title, note, date, flag);
-		if (ToDoListService.updateItem(todoLs)) {
+		if (ToDoListService.updateItem(title,todoLs)) {
 			return " Successfully update!! ";
 		} else {
 			return "!! Update Failure !!";
